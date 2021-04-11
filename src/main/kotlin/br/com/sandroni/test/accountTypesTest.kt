@@ -18,7 +18,7 @@ fun accountTypeTest() {
     c1.extract()
     c2.extract()
 
-    c2.transfer(400.0, c1)
+    c2.transfer(400.0, c1,8)
 
     c1.extract()
     c2.extract()

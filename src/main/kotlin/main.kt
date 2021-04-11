@@ -1,14 +1,12 @@
-import br.com.sandroni.test.printToStringTest
+import br.com.sandroni.models.Adress
 
 fun main() {
     println("Welcome to the UDOBANK")
 
-    var p1="Algo"
-    var p2 = p1
-    p2="Aglo 2"
+    val ad1:Adress?=null
 
-    println(p1)
-    println(p2)
+
+    println(ad1?.place)
 }
 
 

@@ -1,5 +1,7 @@
 package br.com.sandroni.models
 
+import br.com.sandroni.exception.InsufficientFundsException
+
 
 class CurrentAccount(
     holder: Client,
@@ -9,8 +11,11 @@ class CurrentAccount(
     override fun bag(value:Double){
         val valueWithTax=value+0.50
 
-        if(this.balance>=valueWithTax){
-            this.balance-=valueWithTax
+        if(this.balance<valueWithTax){
+            throw InsufficientFundsException()
         }
+
+        this.balance-=valueWithTax
+
     }
 }

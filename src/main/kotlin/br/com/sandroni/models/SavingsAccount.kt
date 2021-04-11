@@ -1,5 +1,7 @@
 package br.com.sandroni.models
 
+import br.com.sandroni.exception.InsufficientFundsException
+
 
 class SavingsAccount(
     holder: Client,
@@ -7,8 +9,10 @@ class SavingsAccount(
 ): Account(holder,number) {
 
     override fun bag(value: Double) {
-        if(this.balance>=value){
-            this.balance-=value
+        if(this.balance < value){
+          throw InsufficientFundsException()
         }
+
+        this.balance-=value
     }
 }
